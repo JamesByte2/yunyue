@@ -39,6 +39,7 @@ func main() {
 
 	api := r.Group("/api")
 	api.POST("/auth/login", login(cfg.JWTSecret))
+	PublicRoutes(r)
 
 	auth := api.Group("/", AuthRequired(cfg.JWTSecret))
 	{
