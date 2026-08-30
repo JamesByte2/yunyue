@@ -1,0 +1,6 @@
+backend/yunyue-api
+backend/yunyue-api.exe
+backend/.env
+node_modules/
+dist/
+*.log
