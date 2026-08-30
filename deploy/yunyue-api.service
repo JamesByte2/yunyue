@@ -1,0 +1,16 @@
+[Unit]
+Description=YunYue appointment management API (Go)
+After=network.target docker.service
+
+[Service]
+User=root
+WorkingDirectory=/opt/yunyue/backend
+Environment=PORT=8010
+Environment=DB_DSN=root:knowbase_dev@tcp(127.0.0.1:3306)/yunyue?charset=utf8mb4&parseTime=True
+Environment=JWT_SECRET=yunyue-prod-secret-4f2a9c8e1b7d
+ExecStart=/opt/yunyue/backend/yunyue-api
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
